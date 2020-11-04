@@ -8,12 +8,12 @@ import (
 
 	cli "github.com/spf13/cobra"
 
-	"github.com/Ilyes512/boilr/pkg/boilr"
-	"github.com/Ilyes512/boilr/pkg/template"
-	"github.com/Ilyes512/boilr/pkg/util/exit"
-	"github.com/Ilyes512/boilr/pkg/util/osutil"
-	"github.com/Ilyes512/boilr/pkg/util/tlog"
-	"github.com/Ilyes512/boilr/pkg/util/validate"
+	"github.com/timsolov/boilr/pkg/boilr"
+	"github.com/timsolov/boilr/pkg/template"
+	"github.com/timsolov/boilr/pkg/util/exit"
+	"github.com/timsolov/boilr/pkg/util/osutil"
+	"github.com/timsolov/boilr/pkg/util/tlog"
+	"github.com/timsolov/boilr/pkg/util/validate"
 )
 
 // TemplateInRegistry checks whether the given name exists in the template registry.

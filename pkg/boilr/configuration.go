@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/Ilyes512/boilr/pkg/util/exit"
-	"github.com/Ilyes512/boilr/pkg/util/osutil"
+	"github.com/timsolov/boilr/pkg/util/exit"
+	"github.com/timsolov/boilr/pkg/util/osutil"
 )
 
 // All the below variables should be set with -X go linker option
@@ -23,19 +23,15 @@ var (
 	Commit = "NOT_SET"
 
 	// Respect XDG Base Directory Specification if set
-	XDGHomeDir := os.Getenv("XDG_CONFIG_HOME")
+	XDGHomeDir = "NOT_SET"
+
+	// ConfigDirPath is the configuration directory of the application
+	ConfigDirPath = "NOT_SET"
 )
 
 const (
 	// AppName of the application
 	AppName = "boilr"
-
-	// ConfigDirPath is the configuration directory of the application
-	if XDGHomeDir == "" {
-		ConfigDirPath = ".config/boilr"
-	} else {
-		ConfigDirPath = "/boilr"
-	}
 
 	// ConfigFileName is the configuration file name of the application
 	ConfigFileName = "config.json"
@@ -53,7 +49,7 @@ const (
 	TemplateMetadataName = "__metadata.json"
 
 	// GithubOwner is the owner of the github repository
-	GithubOwner = "ilyes512"
+	GithubOwner = "timsolov"
 
 	// GithubRepo is the name of the github repository
 	GithubRepo = "boilr"
@@ -79,6 +75,14 @@ func IsTemplateDirInitialized() (bool, error) {
 }
 
 func init() {
+	XDGHomeDir = os.Getenv("XDG_CONFIG_HOME")
+	// ConfigDirPath is the configuration directory of the application
+	if XDGHomeDir == "" {
+		ConfigDirPath = ".config/boilr"
+	} else {
+		ConfigDirPath = "/boilr"
+	}
+
 	homeDir := os.Getenv("HOME")
 	if homeDir == "" {
 		// FIXME is this really necessary?

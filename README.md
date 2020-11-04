@@ -6,11 +6,11 @@
 ---
 
 <p align="center">
-<a href="https://travis-ci.com/Ilyes512/boilr"><img alt="Build Status" src="https://img.shields.io/travis/com/Ilyes512/boilr.svg?style=flat-square" /></a>
-<a href="https://github.com/Ilyes512/boilr/blob/master/LICENSE" ><img alt="License" src="https://img.shields.io/badge/license-Apache%20License%202.0-E91E63.svg?style=flat-square"/></a>
-<a href="https://github.com/Ilyes512/boilr/releases" ><img alt="Release Version" src="https://img.shields.io/github/release/Ilyes512/boilr.svg?style=flat-square"/></a>
-<a href="http://goreportcard.com/report/Ilyes512/boilr" ><img alt="Code Quality" src="https://goreportcard.com/badge/github.com/Ilyes512/boilr?style=flat-square"/></a>
-<a href="https://godoc.org/github.com/Ilyes512/boilr" ><img alt="Documentation" src="https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square"/></a>
+<a href="https://travis-ci.com/timsolov/boilr"><img alt="Build Status" src="https://img.shields.io/travis/com/timsolov/boilr.svg?style=flat-square" /></a>
+<a href="https://github.com/timsolov/boilr/blob/master/LICENSE" ><img alt="License" src="https://img.shields.io/badge/license-Apache%20License%202.0-E91E63.svg?style=flat-square"/></a>
+<a href="https://github.com/timsolov/boilr/releases" ><img alt="Release Version" src="https://img.shields.io/github/release/timsolov/boilr.svg?style=flat-square"/></a>
+<a href="http://goreportcard.com/report/timsolov/boilr" ><img alt="Code Quality" src="https://goreportcard.com/badge/github.com/timsolov/boilr?style=flat-square"/></a>
+<a href="https://godoc.org/github.com/timsolov/boilr" ><img alt="Documentation" src="https://img.shields.io/badge/godoc-reference-5272B4.svg?style=flat-square"/></a>
 </p>
 
 <p align=center>
@@ -21,7 +21,7 @@
 
 ![Usage Demonstration](assets/usage.gif)
 
-For more details, see [Introduction](https://github.com/Ilyes512/boilr/wiki/Introduction) page.
+For more details, see [Introduction](https://github.com/timsolov/boilr/wiki/Introduction) page.
 
 # NOTE
 
@@ -40,13 +40,13 @@ adding licenses to new projects with a single command.
 Binaries for Linux & OSX are built automatically by Travis every release.
 You can download them directly or run the installation script.
 
-Please see [Installation](https://github.com/Ilyes512/boilr/wiki/Installation) page for more information.
+Please see [Installation](https://github.com/timsolov/boilr/wiki/Installation) page for more information.
 
 ## Homebrew (MacOS)
 
 ```bash
-brew tap Ilyes512/boilr
-brew install Ilyes512/boilr/boilr
+brew tap timsolov/boilr
+brew install timsolov/boilr/boilr
 ```
 
 # Getting Started with Boilr
@@ -118,7 +118,7 @@ The user will be prompted as follows:
 [✔] Successfully executed the project template license in /workspace/tmrts/example-project
 ```
 
-For more information please take a look at [Usage](https://github.com/Ilyes512/boilr/wiki/Usage) and [Creating Templates](https://github.com/tmrts/Ilyes512/wiki/Creating-Templates) pages in the wiki.
+For more information please take a look at [Usage](https://github.com/timsolov/boilr/wiki/Usage) and [Creating Templates](https://github.com/tmrts/timsolov/wiki/Creating-Templates) pages in the wiki.
 
 # List of Templates
 
@@ -129,7 +129,7 @@ src="https://cdn.rawgit.com/tmrts/boilr/master/assets/template-logos/docker.svg"
 <img alt="Kubernetes Logo" height=96 width=96
 src="https://cdn.rawgit.com/tmrts/boilr/master/assets/template-logos/kubernetes.svg" />
 
-Take a look at the [Templates](https://github.com/Ilyes512/boilr/wiki/Templates) page for an index of project templates, examples, and more information.
+Take a look at the [Templates](https://github.com/timsolov/boilr/wiki/Templates) page for an index of project templates, examples, and more information.
 
 # Need Help? Found a bug? Want a Feature?
 If you'd like to contribute, share your opinions or ask questions, please feel free to open an issue.

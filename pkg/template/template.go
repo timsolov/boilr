@@ -9,12 +9,12 @@ import (
 	"regexp"
 	"text/template"
 
-	"github.com/Ilyes512/boilr/pkg/boilr"
-	"github.com/Ilyes512/boilr/pkg/prompt"
-	"github.com/Ilyes512/boilr/pkg/util/osutil"
-	"github.com/Ilyes512/boilr/pkg/util/stringutil"
-	"github.com/Ilyes512/boilr/pkg/util/tlog"
 	"github.com/Masterminds/sprig"
+	"github.com/timsolov/boilr/pkg/boilr"
+	"github.com/timsolov/boilr/pkg/prompt"
+	"github.com/timsolov/boilr/pkg/util/osutil"
+	"github.com/timsolov/boilr/pkg/util/stringutil"
+	"github.com/timsolov/boilr/pkg/util/tlog"
 )
 
 // Interface is contains the behavior of boilr templates.

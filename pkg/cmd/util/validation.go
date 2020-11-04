@@ -7,9 +7,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/Ilyes512/boilr/pkg/template"
-	"github.com/Ilyes512/boilr/pkg/util/osutil"
-	"github.com/Ilyes512/boilr/pkg/util/validate"
+	"github.com/timsolov/boilr/pkg/template"
+	"github.com/timsolov/boilr/pkg/util/osutil"
+	"github.com/timsolov/boilr/pkg/util/validate"
 )
 
 var (

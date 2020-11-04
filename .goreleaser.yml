@@ -9,14 +9,13 @@ snapshot:
   name_template: "{{ .Tag }}-next"
 brew:
   github:
-    owner: Ilyes512
+    owner: timsolov
     name: homebrew-boilr
   commit_author:
     name: goreleaserbot
-    email: ilyes.ahidar@gmail.com
   folder: Formula
-  homepage: https://github.com/Ilyes512/boilr
+  homepage: https://github.com/timsolov/boilr
   description: "Boilerplate template manager that generates files or directories from template repositories"
 builds:
   - ldflags:
-      - -s -w -X 'github.com/Ilyes512/boilr/pkg/boilr.Version={{.Version}}' -X 'github.com/Ilyes512/boilr/pkg/boilr.BuildDate={{.Date}}' -X 'github.com/Ilyes512/boilr/pkg/boilr.Commit={{.Commit}}'
+      - -s -w -X 'github.com/timsolov/boilr/pkg/boilr.Version={{.Version}}' -X 'github.com/timsolov/boilr/pkg/boilr.BuildDate={{.Date}}' -X 'github.com/timsolov/boilr/pkg/boilr.Commit={{.Commit}}'

@@ -3,7 +3,7 @@ package stringutil_test
 import (
 	"testing"
 
-	"github.com/Ilyes512/boilr/pkg/util/stringutil"
+	"github.com/timsolov/boilr/pkg/util/stringutil"
 )
 
 func TestReadsFromString(t *testing.T) {

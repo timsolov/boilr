@@ -5,8 +5,8 @@ import (
 
 	cli "github.com/spf13/cobra"
 
-	"github.com/Ilyes512/boilr/pkg/boilr"
-	"github.com/Ilyes512/boilr/pkg/util/validate"
+	"github.com/timsolov/boilr/pkg/boilr"
+	"github.com/timsolov/boilr/pkg/util/validate"
 )
 
 // Version contains the cli-command for printing the current version of the tool.

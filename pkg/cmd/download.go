@@ -6,13 +6,13 @@ import (
 
 	cli "github.com/spf13/cobra"
 
-	"github.com/Ilyes512/boilr/pkg/boilr"
-	"github.com/Ilyes512/boilr/pkg/host"
-	"github.com/Ilyes512/boilr/pkg/util/exit"
-	"github.com/Ilyes512/boilr/pkg/util/git"
-	"github.com/Ilyes512/boilr/pkg/util/osutil"
-	"github.com/Ilyes512/boilr/pkg/util/tlog"
-	"github.com/Ilyes512/boilr/pkg/util/validate"
+	"github.com/timsolov/boilr/pkg/boilr"
+	"github.com/timsolov/boilr/pkg/host"
+	"github.com/timsolov/boilr/pkg/util/exit"
+	"github.com/timsolov/boilr/pkg/util/git"
+	"github.com/timsolov/boilr/pkg/util/osutil"
+	"github.com/timsolov/boilr/pkg/util/tlog"
+	"github.com/timsolov/boilr/pkg/util/validate"
 )
 
 // Download contains the cli-command for downloading templates from github.
