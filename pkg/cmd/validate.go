@@ -17,7 +17,12 @@ var (
 var Validate = &cli.Command{
 	Use:   "validate <template-path>",
 	Short: "Validate a local project template",
-	Run: func(_ *cli.Command, args []string) {
+	Run: func(c *cli.Command, args []string) {
+		if len(args) == 0 {
+			_ = c.Usage()
+			return
+		}
+
 		MustValidateArgs(args, []validate.Argument{
 			{Name: "template-path", Validate: validate.UnixPath},
 		})

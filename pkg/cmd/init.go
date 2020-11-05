@@ -12,8 +12,8 @@ import (
 // Init contains the cli-command for initializing the local template
 // registry in case it's not initialized.
 var Init = &cli.Command{
-	Use:   "init",
-	Short: "Initialize directories required by boilr (By default done by installation script)",
+	Use:   "setup",
+	Short: "Setup directories required by boilr (By default done by installation script)",
 	Run: func(c *cli.Command, _ []string) {
 		// Check if .config/boilr exists
 		if exists, err := osutil.DirExists(boilr.Configuration.TemplateDirPath); exists {

@@ -32,7 +32,12 @@ func TemplateInRegistry(name string) (bool, error) {
 var Use = &cli.Command{
 	Use:   "use <template-tag> <target-dir>",
 	Short: "Execute a project template in the given directory",
-	Run: func(cmd *cli.Command, args []string) {
+	Run: func(c *cli.Command, args []string) {
+		if len(args) == 0 {
+			_ = c.Usage()
+			return
+		}
+
 		MustValidateArgs(args, []validate.Argument{
 			{Name: "template-tag", Validate: validate.UnixPath},
 			{Name: "target-dir", Validate: validate.UnixPath},
@@ -40,7 +45,7 @@ var Use = &cli.Command{
 
 		MustValidateTemplateDir()
 
-		tlog.SetLogLevel(GetStringFlag(cmd, "log-level"))
+		tlog.SetLogLevel(GetStringFlag(c, "log-level"))
 
 		tmplName := args[0]
 		targetDir, err := filepath.Abs(args[1])
@@ -67,7 +72,7 @@ var Use = &cli.Command{
 			exit.Fatal(fmt.Errorf("use: %s", err))
 		}
 
-		if shouldUseDefaults := GetBoolFlag(cmd, "use-defaults"); shouldUseDefaults {
+		if shouldUseDefaults := GetBoolFlag(c, "use-defaults"); shouldUseDefaults {
 			tmpl.UseDefaultValues()
 		}
 

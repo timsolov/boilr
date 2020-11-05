@@ -18,6 +18,11 @@ var Delete = &cli.Command{
 	Use:   "delete <template-tag>",
 	Short: "Delete a project template from the template registry",
 	Run: func(c *cli.Command, args []string) {
+		if len(args) == 0 {
+			_ = c.Usage()
+			return
+		}
+
 		MustValidateVarArgs(args, validate.Argument{Name: "template-path", Validate: validate.AlphanumericExt})
 
 		MustValidateTemplateDir()
