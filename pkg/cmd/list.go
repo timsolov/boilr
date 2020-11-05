@@ -30,6 +30,18 @@ func ListTemplates() (map[string]bool, error) {
 
 	nameSet := make(map[string]bool)
 	for _, name := range names {
+		tmplPath, err := boilr.TemplatePath(name)
+		if err != nil {
+			exit.Fatal(fmt.Errorf("TemplatePath: %s", err))
+		}
+		fi, err := os.Stat(tmplPath)
+		if err != nil {
+			fmt.Println("os.Stat error:", err)
+			continue
+		}
+		if !fi.IsDir() || strings.HasPrefix(name, ".") {
+			continue
+		}
 		nameSet[name] = true
 	}
 
