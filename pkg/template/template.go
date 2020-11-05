@@ -7,12 +7,13 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"syscall"
 	"text/template"
+	"time"
 
 	"github.com/Masterminds/sprig"
 	"github.com/timsolov/boilr/pkg/boilr"
 	"github.com/timsolov/boilr/pkg/prompt"
-	"github.com/timsolov/boilr/pkg/util/osutil"
 	"github.com/timsolov/boilr/pkg/util/stringutil"
 	"github.com/timsolov/boilr/pkg/util/tlog"
 )
@@ -68,25 +69,18 @@ func Get(path string) (Interface, error) {
 		return nil, err
 	}
 
-	metadataExists, err := osutil.FileExists(filepath.Join(absPath, boilr.TemplateMetadataName))
-	if err != nil {
-		return nil, err
-	}
-
 	md, err := func() (Metadata, error) {
-		if !metadataExists {
-			return Metadata{}, nil
-		}
-
-		b, err := ioutil.ReadFile(filepath.Join(absPath, boilr.TemplateMetadataName))
-		if err != nil {
-			return Metadata{}, err
-		}
-
 		var m Metadata
-		if err := json.Unmarshal(b, &m); err != nil {
-			return Metadata{}, err
+
+		fi, err := os.Stat(absPath)
+		if err != nil {
+			return m, err
 		}
+		stat := fi.Sys().(*syscall.Stat_t)
+		createdAt := time.Unix(int64(stat.Ctim.Sec), int64(stat.Ctim.Nsec))
+		m.Created = JSONTime(createdAt)
+		m.Repository = absPath
+		m.Tag = filepath.Base(absPath)
 
 		return m, nil
 	}()
