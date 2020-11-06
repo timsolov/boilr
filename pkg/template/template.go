@@ -7,15 +7,14 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
-	"syscall"
 	"text/template"
-	"time"
 
 	"github.com/Masterminds/sprig"
 	"github.com/timsolov/boilr/pkg/boilr"
 	"github.com/timsolov/boilr/pkg/prompt"
 	"github.com/timsolov/boilr/pkg/util/stringutil"
 	"github.com/timsolov/boilr/pkg/util/tlog"
+	"gopkg.in/djherbis/times.v1"
 )
 
 // Interface is contains the behavior of boilr templates.
@@ -72,13 +71,13 @@ func Get(path string) (Interface, error) {
 	md, err := func() (Metadata, error) {
 		var m Metadata
 
-		fi, err := os.Stat(absPath)
+		stat, err := times.Stat(absPath)
 		if err != nil {
 			return m, err
 		}
-		stat := fi.Sys().(*syscall.Stat_t)
-		createdAt := time.Unix(int64(stat.Ctim.Sec), int64(stat.Ctim.Nsec))
-		m.Created = JSONTime(createdAt)
+		if stat.HasBirthTime() {
+			m.Created = JSONTime(stat.BirthTime())
+		}
 		m.Repository = absPath
 		m.Tag = filepath.Base(absPath)
 
